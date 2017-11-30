@@ -1,0 +1,13 @@
+{
+  "commitish" : "10.0.0",
+  "Mac" : [
+    {
+      "name" : "ReactiveMoya",
+      "hash" : "996098acb022c41991e48e18294f3ad29ffde7d57bfbb3ce8770511f0a10733a"
+    },
+    {
+      "name" : "Moya",
+      "hash" : "1bd2070fc090672446272752b7a5401cce60577a17f5afca970d92734375522d"
+    }
+  ]
+}

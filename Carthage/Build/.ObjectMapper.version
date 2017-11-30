@@ -1,0 +1,9 @@
+{
+  "commitish" : "2.2.9",
+  "Mac" : [
+    {
+      "name" : "ObjectMapper",
+      "hash" : "c9017546dfd7deb1523ad7945c8c3b76a7e69a8a349db582db3d0f9461f0117c"
+    }
+  ]
+}

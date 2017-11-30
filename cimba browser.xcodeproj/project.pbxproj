@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4AA28A1B1FBBDEA6007E9D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A1A1FBBDEA6007E9D59 /* AppDelegate.swift */; };
+		4AA28A1D1FBBDEA6007E9D59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A1C1FBBDEA6007E9D59 /* ViewController.swift */; };
+		4AA28A1F1FBBDEA6007E9D59 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A1E1FBBDEA6007E9D59 /* Document.swift */; };
+		4AA28A211FBBDEA6007E9D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA28A201FBBDEA6007E9D59 /* Assets.xcassets */; };
+		4AA28A241FBBDEA6007E9D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA28A221FBBDEA6007E9D59 /* Main.storyboard */; };
+		4AA28A2D1FBC0172007E9D59 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A2C1FBC0172007E9D59 /* WebViewController.swift */; };
+		4AA28A311FBC0184007E9D59 /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A301FBC0184007E9D59 /* Observable+ObjectMapper.swift */; };
+		4AA28A331FBC02BB007E9D59 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 4AA28A321FBC02BB007E9D59 /* Cartfile */; };
+		4AA28A3B1FBC0AE3007E9D59 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A341FBC0AE2007E9D59 /* RxMoya.framework */; };
+		4AA28A3C1FBC0AE3007E9D59 /* RxMoya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A341FBC0AE2007E9D59 /* RxMoya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AA28A3D1FBC0AE3007E9D59 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A351FBC0AE2007E9D59 /* Result.framework */; };
+		4AA28A3E1FBC0AE3007E9D59 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A351FBC0AE2007E9D59 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AA28A3F1FBC0AE3007E9D59 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A361FBC0AE2007E9D59 /* ObjectMapper.framework */; };
+		4AA28A401FBC0AE3007E9D59 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A361FBC0AE2007E9D59 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AA28A411FBC0AE3007E9D59 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A371FBC0AE2007E9D59 /* Moya.framework */; };
+		4AA28A421FBC0AE3007E9D59 /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A371FBC0AE2007E9D59 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AA28A431FBC0AE3007E9D59 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A381FBC0AE2007E9D59 /* RxCocoa.framework */; };
+		4AA28A441FBC0AE3007E9D59 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A381FBC0AE2007E9D59 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AA28A451FBC0AE3007E9D59 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A391FBC0AE2007E9D59 /* RxSwift.framework */; };
+		4AA28A461FBC0AE3007E9D59 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A391FBC0AE2007E9D59 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AA28A471FBC0AE3007E9D59 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A3A1FBC0AE3007E9D59 /* Alamofire.framework */; };
+		4AA28A481FBC0AE3007E9D59 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A3A1FBC0AE3007E9D59 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AA28A4D1FBC0B66007E9D59 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A4C1FBC0B65007E9D59 /* APIManager.swift */; };
+		4AA28A501FBC0BAC007E9D59 /* LoginResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A4E1FBC0BAC007E9D59 /* LoginResp.swift */; };
+		4AA28A511FBC0BAC007E9D59 /* BWInfoResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A4F1FBC0BAC007E9D59 /* BWInfoResp.swift */; };
+		4AA28A531FBC0F91007E9D59 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A521FBC0F91007E9D59 /* WindowController.swift */; };
+		4AA28A5D1FBD62D0007E9D59 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A5C1FBD62D0007E9D59 /* LoginService.swift */; };
+		4AA28A5F1FBD646A007E9D59 /* BWInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A5E1FBD646A007E9D59 /* BWInfoService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4AA28A491FBC0AE3007E9D59 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4AA28A421FBC0AE3007E9D59 /* Moya.framework in Embed Frameworks */,
+				4AA28A401FBC0AE3007E9D59 /* ObjectMapper.framework in Embed Frameworks */,
+				4AA28A461FBC0AE3007E9D59 /* RxSwift.framework in Embed Frameworks */,
+				4AA28A3C1FBC0AE3007E9D59 /* RxMoya.framework in Embed Frameworks */,
+				4AA28A481FBC0AE3007E9D59 /* Alamofire.framework in Embed Frameworks */,
+				4AA28A441FBC0AE3007E9D59 /* RxCocoa.framework in Embed Frameworks */,
+				4AA28A3E1FBC0AE3007E9D59 /* Result.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4AA28A171FBBDEA6007E9D59 /* cimba browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cimba browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AA28A1A1FBBDEA6007E9D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4AA28A1C1FBBDEA6007E9D59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4AA28A1E1FBBDEA6007E9D59 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		4AA28A201FBBDEA6007E9D59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AA28A231FBBDEA6007E9D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4AA28A251FBBDEA6007E9D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AA28A2C1FBC0172007E9D59 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		4AA28A301FBC0184007E9D59 /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
+		4AA28A321FBC02BB007E9D59 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		4AA28A341FBC0AE2007E9D59 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/Mac/RxMoya.framework; sourceTree = "<group>"; };
+		4AA28A351FBC0AE2007E9D59 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		4AA28A361FBC0AE2007E9D59 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/Mac/ObjectMapper.framework; sourceTree = "<group>"; };
+		4AA28A371FBC0AE2007E9D59 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/Mac/Moya.framework; sourceTree = "<group>"; };
+		4AA28A381FBC0AE2007E9D59 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
+		4AA28A391FBC0AE2007E9D59 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
+		4AA28A3A1FBC0AE3007E9D59 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
+		4AA28A4C1FBC0B65007E9D59 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4AA28A4E1FBC0BAC007E9D59 /* LoginResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResp.swift; sourceTree = "<group>"; };
+		4AA28A4F1FBC0BAC007E9D59 /* BWInfoResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWInfoResp.swift; sourceTree = "<group>"; };
+		4AA28A521FBC0F91007E9D59 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		4AA28A5A1FBD29CF007E9D59 /* cimba browser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "cimba browser.entitlements"; sourceTree = "<group>"; };
+		4AA28A5C1FBD62D0007E9D59 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		4AA28A5E1FBD646A007E9D59 /* BWInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWInfoService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AA28A141FBBDEA6007E9D59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AA28A411FBC0AE3007E9D59 /* Moya.framework in Frameworks */,
+				4AA28A3F1FBC0AE3007E9D59 /* ObjectMapper.framework in Frameworks */,
+				4AA28A451FBC0AE3007E9D59 /* RxSwift.framework in Frameworks */,
+				4AA28A3B1FBC0AE3007E9D59 /* RxMoya.framework in Frameworks */,
+				4AA28A471FBC0AE3007E9D59 /* Alamofire.framework in Frameworks */,
+				4AA28A431FBC0AE3007E9D59 /* RxCocoa.framework in Frameworks */,
+				4AA28A3D1FBC0AE3007E9D59 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4AA28A0E1FBBDEA6007E9D59 = {
+			isa = PBXGroup;
+			children = (
+				4AA28A3A1FBC0AE3007E9D59 /* Alamofire.framework */,
+				4AA28A371FBC0AE2007E9D59 /* Moya.framework */,
+				4AA28A361FBC0AE2007E9D59 /* ObjectMapper.framework */,
+				4AA28A351FBC0AE2007E9D59 /* Result.framework */,
+				4AA28A381FBC0AE2007E9D59 /* RxCocoa.framework */,
+				4AA28A341FBC0AE2007E9D59 /* RxMoya.framework */,
+				4AA28A391FBC0AE2007E9D59 /* RxSwift.framework */,
+				4AA28A321FBC02BB007E9D59 /* Cartfile */,
+				4AA28A191FBBDEA6007E9D59 /* cimba browser */,
+				4AA28A181FBBDEA6007E9D59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4AA28A181FBBDEA6007E9D59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AA28A171FBBDEA6007E9D59 /* cimba browser.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AA28A191FBBDEA6007E9D59 /* cimba browser */ = {
+			isa = PBXGroup;
+			children = (
+				4AA28A5B1FBD6299007E9D59 /* service */,
+				4AA28A5A1FBD29CF007E9D59 /* cimba browser.entitlements */,
+				4AA28A4B1FBC0B27007E9D59 /* bean */,
+				4AA28A4A1FBC0B1D007E9D59 /* network */,
+				4AA28A301FBC0184007E9D59 /* Observable+ObjectMapper.swift */,
+				4AA28A521FBC0F91007E9D59 /* WindowController.swift */,
+				4AA28A2C1FBC0172007E9D59 /* WebViewController.swift */,
+				4AA28A1A1FBBDEA6007E9D59 /* AppDelegate.swift */,
+				4AA28A1C1FBBDEA6007E9D59 /* ViewController.swift */,
+				4AA28A1E1FBBDEA6007E9D59 /* Document.swift */,
+				4AA28A201FBBDEA6007E9D59 /* Assets.xcassets */,
+				4AA28A221FBBDEA6007E9D59 /* Main.storyboard */,
+				4AA28A251FBBDEA6007E9D59 /* Info.plist */,
+			);
+			path = "cimba browser";
+			sourceTree = "<group>";
+		};
+		4AA28A4A1FBC0B1D007E9D59 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				4AA28A4C1FBC0B65007E9D59 /* APIManager.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		4AA28A4B1FBC0B27007E9D59 /* bean */ = {
+			isa = PBXGroup;
+			children = (
+				4AA28A4F1FBC0BAC007E9D59 /* BWInfoResp.swift */,
+				4AA28A4E1FBC0BAC007E9D59 /* LoginResp.swift */,
+			);
+			path = bean;
+			sourceTree = "<group>";
+		};
+		4AA28A5B1FBD6299007E9D59 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				4AA28A5C1FBD62D0007E9D59 /* LoginService.swift */,
+				4AA28A5E1FBD646A007E9D59 /* BWInfoService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AA28A161FBBDEA6007E9D59 /* cimba browser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AA28A291FBBDEA6007E9D59 /* Build configuration list for PBXNativeTarget "cimba browser" */;
+			buildPhases = (
+				4AA28A131FBBDEA6007E9D59 /* Sources */,
+				4AA28A141FBBDEA6007E9D59 /* Frameworks */,
+				4AA28A151FBBDEA6007E9D59 /* Resources */,
+				4AA28A491FBC0AE3007E9D59 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cimba browser";
+			productName = "cimba browser";
+			productReference = 4AA28A171FBBDEA6007E9D59 /* cimba browser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AA28A0F1FBBDEA6007E9D59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = jason;
+				TargetAttributes = {
+					4AA28A161FBBDEA6007E9D59 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 4AA28A121FBBDEA6007E9D59 /* Build configuration list for PBXProject "cimba browser" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AA28A0E1FBBDEA6007E9D59;
+			productRefGroup = 4AA28A181FBBDEA6007E9D59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AA28A161FBBDEA6007E9D59 /* cimba browser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AA28A151FBBDEA6007E9D59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AA28A331FBC02BB007E9D59 /* Cartfile in Resources */,
+				4AA28A211FBBDEA6007E9D59 /* Assets.xcassets in Resources */,
+				4AA28A241FBBDEA6007E9D59 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AA28A131FBBDEA6007E9D59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AA28A311FBC0184007E9D59 /* Observable+ObjectMapper.swift in Sources */,
+				4AA28A531FBC0F91007E9D59 /* WindowController.swift in Sources */,
+				4AA28A511FBC0BAC007E9D59 /* BWInfoResp.swift in Sources */,
+				4AA28A1D1FBBDEA6007E9D59 /* ViewController.swift in Sources */,
+				4AA28A1B1FBBDEA6007E9D59 /* AppDelegate.swift in Sources */,
+				4AA28A1F1FBBDEA6007E9D59 /* Document.swift in Sources */,
+				4AA28A5D1FBD62D0007E9D59 /* LoginService.swift in Sources */,
+				4AA28A5F1FBD646A007E9D59 /* BWInfoService.swift in Sources */,
+				4AA28A501FBC0BAC007E9D59 /* LoginResp.swift in Sources */,
+				4AA28A2D1FBC0172007E9D59 /* WebViewController.swift in Sources */,
+				4AA28A4D1FBC0B66007E9D59 /* APIManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4AA28A221FBBDEA6007E9D59 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AA28A231FBBDEA6007E9D59 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4AA28A271FBBDEA6007E9D59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4AA28A281FBBDEA6007E9D59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		4AA28A2A1FBBDEA6007E9D59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "cimba browser/cimba browser.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PH736FYAHQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "cimba browser/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.51his.cimba-browser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		4AA28A2B1FBBDEA6007E9D59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "cimba browser/cimba browser.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PH736FYAHQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "cimba browser/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.51his.cimba-browser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AA28A121FBBDEA6007E9D59 /* Build configuration list for PBXProject "cimba browser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AA28A271FBBDEA6007E9D59 /* Debug */,
+				4AA28A281FBBDEA6007E9D59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AA28A291FBBDEA6007E9D59 /* Build configuration list for PBXNativeTarget "cimba browser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AA28A2A1FBBDEA6007E9D59 /* Debug */,
+				4AA28A2B1FBBDEA6007E9D59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4AA28A0F1FBBDEA6007E9D59 /* Project object */;
+}
