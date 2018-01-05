@@ -17,7 +17,9 @@ protocol feedBack {
 var whiteList_G = Array<String>()
 var windowCount_G:Variable<Int>  = Variable(0)
 var urlString_G: String = "https://cn.bing.com"
-var winTitle_G: String = ""
+//var winTitle_G: String = ""
+var userId_G: Int = 0
+var token_G: String = ""
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -33,6 +35,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             //后台如果登录失败返回403，不会进入这里（filterSuccessfulStatusCodes()），进入这里一定登录成功
             let userId = loginResp.userid
             let token = loginResp.token
+            //设置全局变量
+            userId_G = userId!
+            token_G = token!
             let bwInfoService = BWInfoService()
             bwInfoService.getBWInfo(userid: userId! ,username: "ljy", token: token!).subscribe(onNext: { (bwInfoResp: BWInfoResp ) in
                 let bwFlag = bwInfoResp.bwflag
@@ -48,6 +53,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+    
+    //实现了这个代理方法，且返回true时，关闭最后一个/唯一一个窗口时，彻底关闭应用,而不只是退到后台
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
     }
 
 

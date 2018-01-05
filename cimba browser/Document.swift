@@ -13,7 +13,7 @@ class Document: NSDocument {
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
-//        displayName = "init name"
+        displayName = ""
 //        fileURL = nil
 //        isDraft = true
 //        self.updateChangeCount(NSDocument.ChangeType.changeDiscardable)
@@ -21,8 +21,8 @@ class Document: NSDocument {
     }
 
     override class var autosavesInPlace: Bool {
-        return true
-//        return false
+//        return true
+        return false
     }
 
     override func makeWindowControllers() {
@@ -47,14 +47,15 @@ class Document: NSDocument {
     }
     
     override func close() {
-        windowCount_G.value -= 1
-        Swift.print("windowCount:" + String(windowCount_G.value))
         super.close()
+        windowCount_G.value = NSDocumentController.shared.documents.count
+//        Swift.print("windowCount:" + String(windowCount_G.value))
+        
     }
     
 //    override func save(withDelegate delegate: Any?, didSave didSaveSelector: Selector?, contextInfo: UnsafeMutableRawPointer?) {
-//
-//        Swift.print("save")
+//        Swift.print("save document:" + String(self.isDocumentEdited))
+//        super.save(withDelegate: delegate, didSave: didSaveSelector, contextInfo: contextInfo)
 //
 //    }
 }

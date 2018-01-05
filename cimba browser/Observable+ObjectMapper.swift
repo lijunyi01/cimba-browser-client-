@@ -11,26 +11,6 @@ import RxSwift
 import Moya
 import ObjectMapper
 
-//extension Response {
-//    public func mapObject<T: BaseMappable>(_ type: T.Type) throws -> T {
-//        guard let object = Mapper<T>().map(JSONObject: try mapJSON()) else {
-//            throw MoyaError.jsonMapping(self)
-//        }
-//        return object
-//    }
-//
-//    public func mapArray<T: BaseMappable>(_ type: T.Type) throws -> [T] {
-//        let json = JSON(data: self.data)
-//        let jsonArray = json["data"]["data"]
-//
-//        guard let array = jsonArray.arrayObject as? [[String: Any]],
-//            let objects = Mapper<T>().mapArray(JSONArray: array) else {
-//                throw MoyaError.jsonMapping(self)
-//        }
-//        return objects
-//    }
-//}
-
 //数据类建立好之后，我们还需要为 RxSwift 中的 Observable 写一个简单的扩展方法 mapObject，利用我们写好的 各“Model” 类，一步就把 JSON 数据映射成一个个 "model"对象。
 extension Observable {
     
