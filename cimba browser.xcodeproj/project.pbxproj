@@ -35,6 +35,12 @@
 		4AA28A531FBC0F91007E9D59 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A521FBC0F91007E9D59 /* WindowController.swift */; };
 		4AA28A5D1FBD62D0007E9D59 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A5C1FBD62D0007E9D59 /* LoginService.swift */; };
 		4AA28A5F1FBD646A007E9D59 /* BWInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A5E1FBD646A007E9D59 /* BWInfoService.swift */; };
+		4AADC28B1FECF6FA00FFF3EC /* MyPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AADC28A1FECF6FA00FFF3EC /* MyPanel.xib */; };
+		4AADC28D1FECF8FB00FFF3EC /* MyPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AADC28C1FECF8FB00FFF3EC /* MyPanel.swift */; };
+		4AF4F3F31FD7C8C500A4F965 /* ModalWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF4F3F21FD7C8C500A4F965 /* ModalWindowViewController.swift */; };
+		4AF8361C1FF4D43400479C84 /* AddWLPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8361B1FF4D43400479C84 /* AddWLPanel.swift */; };
+		4AF8361F1FF4E72E00479C84 /* GeneralResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8361E1FF4E72E00479C84 /* GeneralResp.swift */; };
+		4AF836211FF5524700479C84 /* WarnPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF836201FF5524700479C84 /* WarnPanel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,6 +88,12 @@
 		4AA28A5A1FBD29CF007E9D59 /* cimba browser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "cimba browser.entitlements"; sourceTree = "<group>"; };
 		4AA28A5C1FBD62D0007E9D59 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		4AA28A5E1FBD646A007E9D59 /* BWInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWInfoService.swift; sourceTree = "<group>"; };
+		4AADC28A1FECF6FA00FFF3EC /* MyPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPanel.xib; sourceTree = "<group>"; };
+		4AADC28C1FECF8FB00FFF3EC /* MyPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPanel.swift; sourceTree = "<group>"; };
+		4AF4F3F21FD7C8C500A4F965 /* ModalWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalWindowViewController.swift; sourceTree = "<group>"; };
+		4AF8361B1FF4D43400479C84 /* AddWLPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWLPanel.swift; sourceTree = "<group>"; };
+		4AF8361E1FF4E72E00479C84 /* GeneralResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResp.swift; sourceTree = "<group>"; };
+		4AF836201FF5524700479C84 /* WarnPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarnPanel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,19 +141,19 @@
 		4AA28A191FBBDEA6007E9D59 /* cimba browser */ = {
 			isa = PBXGroup;
 			children = (
+				4AF8361D1FF4E31D00479C84 /* controller */,
+				4AF8361A1FF4D40000479C84 /* panel */,
 				4AA28A5B1FBD6299007E9D59 /* service */,
 				4AA28A5A1FBD29CF007E9D59 /* cimba browser.entitlements */,
 				4AA28A4B1FBC0B27007E9D59 /* bean */,
 				4AA28A4A1FBC0B1D007E9D59 /* network */,
 				4AA28A301FBC0184007E9D59 /* Observable+ObjectMapper.swift */,
-				4AA28A521FBC0F91007E9D59 /* WindowController.swift */,
-				4AA28A2C1FBC0172007E9D59 /* WebViewController.swift */,
 				4AA28A1A1FBBDEA6007E9D59 /* AppDelegate.swift */,
-				4AA28A1C1FBBDEA6007E9D59 /* ViewController.swift */,
 				4AA28A1E1FBBDEA6007E9D59 /* Document.swift */,
 				4AA28A201FBBDEA6007E9D59 /* Assets.xcassets */,
 				4AA28A221FBBDEA6007E9D59 /* Main.storyboard */,
 				4AA28A251FBBDEA6007E9D59 /* Info.plist */,
+				4AADC28A1FECF6FA00FFF3EC /* MyPanel.xib */,
 			);
 			path = "cimba browser";
 			sourceTree = "<group>";
@@ -159,6 +171,7 @@
 			children = (
 				4AA28A4F1FBC0BAC007E9D59 /* BWInfoResp.swift */,
 				4AA28A4E1FBC0BAC007E9D59 /* LoginResp.swift */,
+				4AF8361E1FF4E72E00479C84 /* GeneralResp.swift */,
 			);
 			path = bean;
 			sourceTree = "<group>";
@@ -170,6 +183,27 @@
 				4AA28A5E1FBD646A007E9D59 /* BWInfoService.swift */,
 			);
 			path = service;
+			sourceTree = "<group>";
+		};
+		4AF8361A1FF4D40000479C84 /* panel */ = {
+			isa = PBXGroup;
+			children = (
+				4AADC28C1FECF8FB00FFF3EC /* MyPanel.swift */,
+				4AF8361B1FF4D43400479C84 /* AddWLPanel.swift */,
+				4AF836201FF5524700479C84 /* WarnPanel.swift */,
+			);
+			path = panel;
+			sourceTree = "<group>";
+		};
+		4AF8361D1FF4E31D00479C84 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4AA28A521FBC0F91007E9D59 /* WindowController.swift */,
+				4AA28A1C1FBBDEA6007E9D59 /* ViewController.swift */,
+				4AA28A2C1FBC0172007E9D59 /* WebViewController.swift */,
+				4AF4F3F21FD7C8C500A4F965 /* ModalWindowViewController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +273,7 @@
 			files = (
 				4AA28A331FBC02BB007E9D59 /* Cartfile in Resources */,
 				4AA28A211FBBDEA6007E9D59 /* Assets.xcassets in Resources */,
+				4AADC28B1FECF6FA00FFF3EC /* MyPanel.xib in Resources */,
 				4AA28A241FBBDEA6007E9D59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,15 +287,20 @@
 			files = (
 				4AA28A311FBC0184007E9D59 /* Observable+ObjectMapper.swift in Sources */,
 				4AA28A531FBC0F91007E9D59 /* WindowController.swift in Sources */,
+				4AF836211FF5524700479C84 /* WarnPanel.swift in Sources */,
 				4AA28A511FBC0BAC007E9D59 /* BWInfoResp.swift in Sources */,
 				4AA28A1D1FBBDEA6007E9D59 /* ViewController.swift in Sources */,
 				4AA28A1B1FBBDEA6007E9D59 /* AppDelegate.swift in Sources */,
+				4AADC28D1FECF8FB00FFF3EC /* MyPanel.swift in Sources */,
 				4AA28A1F1FBBDEA6007E9D59 /* Document.swift in Sources */,
+				4AF4F3F31FD7C8C500A4F965 /* ModalWindowViewController.swift in Sources */,
+				4AF8361F1FF4E72E00479C84 /* GeneralResp.swift in Sources */,
 				4AA28A5D1FBD62D0007E9D59 /* LoginService.swift in Sources */,
 				4AA28A5F1FBD646A007E9D59 /* BWInfoService.swift in Sources */,
 				4AA28A501FBC0BAC007E9D59 /* LoginResp.swift in Sources */,
 				4AA28A2D1FBC0172007E9D59 /* WebViewController.swift in Sources */,
 				4AA28A4D1FBC0B66007E9D59 /* APIManager.swift in Sources */,
+				4AF8361C1FF4D43400479C84 /* AddWLPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
