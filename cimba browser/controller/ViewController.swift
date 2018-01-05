@@ -34,7 +34,7 @@ class ViewController: NSViewController,feedBack {
         // register delegation
         webViewController.delegate = self
         webViewController.react()
-        Swift.print("view did load")
+//        Swift.print("view did load")
     }
 
     override var representedObject: Any? {

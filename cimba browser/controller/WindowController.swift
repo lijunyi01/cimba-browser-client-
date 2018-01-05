@@ -14,7 +14,7 @@ class WindowController: NSWindowController {
     @IBOutlet weak var myToolBar: NSToolbar!
     @IBOutlet weak var addDocumentButton: NSButtonCell!
     
-    @IBOutlet weak var buttonItem: NSToolbarItem!
+//    @IBOutlet weak var buttonItem: NSToolbarItem!
     //    var title:NSBindingName?
     let disposeBag = DisposeBag()
     
@@ -24,18 +24,32 @@ class WindowController: NSWindowController {
         shouldCascadeWindows = true
 //        shouldCloseDocument = false
     }
+    
+    //该方法会自动被document对象调用，以通知window当前document的状态。传入true就表示document被修改但还未保存
+    override func setDocumentEdited(_ dirtyFlag: Bool) {
+//        Swift.print("dirtyFlag:"+String(dirtyFlag))
+        if(dirtyFlag){
+            //强行设置状态，导致self.document.isDocumentEdited 为false      
+            self.document?.updateChangeCount(NSDocument.ChangeType.changeCleared)
+        }
+        super.setDocumentEdited(dirtyFlag)
+    }
 
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        windowCount_G.value += 1
-//        Swift.print("windowCount:" + String(windowCount.value))
+//        addButtonToTitleBar()
+        
+        windowCount_G.value = NSDocumentController.shared.documents.count
+        
+//        Swift.print("windowCount:" + String(windowCount_G.value))
         
         
 //        print("itemCount:" + String(myToolBar.items.count))
     
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 //        self.bind(title!, to: WebViewController.self, withKeyPath: "urlString", options: nil)
+        
         
         
         webViewController.showTitle.asDriver()
@@ -49,9 +63,6 @@ class WindowController: NSWindowController {
             .drive(onNext: { count in
                 if(count > 1){
                     self.myToolBar.isVisible = false
-//                    if(self.myToolBar.items.count>1){
-//                        self.myToolBar.removeItem(at: 1)
-//                    }
                 }else{
                     self.myToolBar.isVisible = true
                 }
@@ -65,7 +76,9 @@ class WindowController: NSWindowController {
     }
     
     override func windowTitle(forDocumentDisplayName displayName: String) -> String {
-        return winTitle_G
+        //Swift.print("displayname:" + displayName)
+        // Document实例初始化时的displayName
+        return displayName
     }
     
 //    override func synchronizeWindowTitleWithDocumentName() {
@@ -83,5 +96,16 @@ class WindowController: NSWindowController {
             return self.window!.contentViewController!.childViewControllers[0] as! WebViewController
         }
     }
+    
+//    func addButtonToTitleBar(){
+//        let titleView = self.window!.standardWindowButton(.closeButton)?.superview
+//        let button = NSButton()
+//        let x = (self.window!.contentView?.frame.size.width)! - 100
+//        let frame = CGRect(x: x, y: 0, width: 80, height: 24)
+//        button.frame = frame
+//        button.title = "New"
+//        button.bezelStyle = .rounded
+//        titleView?.addSubview(button)
+//    }
 
 }
