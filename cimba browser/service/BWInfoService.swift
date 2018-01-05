@@ -38,4 +38,14 @@ class BWInfoService {
             .mapObject(type:BWInfoResp.self)
     }
     
+    func addToWhiteList(userid:Int, username: String,token: String,domain:String,password:String) -> Observable<GeneralResp> {
+        let authPlugin = AccessTokenPlugin(tokenClosure: token)
+        MyWebProvider = MoyaProvider<APIManager>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter),authPlugin])
+        return MyWebProvider!.rx
+            .request(.addToWhiteList(userid,username,domain,password)).asObservable()
+            .filterSuccessfulStatusCodes()
+            .mapJSON()
+            .mapObject(type:GeneralResp.self)
+    }
+    
 }
