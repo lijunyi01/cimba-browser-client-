@@ -37,6 +37,7 @@ private extension String {
 
 enum APIManager {
     case getBWInfo(Int,String)  //获取域名黑白名单信息
+    case addToWhiteList(Int,String,String,String)  //将域名添加入白名单
     case login(String,String)  //登录验证
     case getNewsLatest//获取最新消息
 //    case getStartImage// 启动界面图像获取
@@ -54,6 +55,8 @@ extension APIManager: TargetType, AccessTokenAuthorizable {
         switch self {
         case .getBWInfo:
             return .bearer
+        case .addToWhiteList:
+            return .bearer
         case .getNewsLatest:
             return .basic
         default:
@@ -68,6 +71,8 @@ extension APIManager: TargetType, AccessTokenAuthorizable {
     var headers: [String : String]? {
         switch self {
         case .getBWInfo:
+            return ["Content-Type": "application/x-www-form-urlencoded"]
+        case .addToWhiteList:
             return ["Content-Type": "application/x-www-form-urlencoded"]
         case .login:
             return ["Content-Type": "application/json","test-header":"test-header-content"]
@@ -90,6 +95,9 @@ extension APIManager: TargetType, AccessTokenAuthorizable {
             
         case .getBWInfo:
             return "cimba-auth/info/bwinfo"
+            
+        case .addToWhiteList:
+            return "cimba-auth/info/addtowhitelist"
             
         case .login:
             return "cimba-auth/auth"
@@ -117,6 +125,8 @@ extension APIManager: TargetType, AccessTokenAuthorizable {
         switch self {
         case .getBWInfo(let userid,let username):
             return .requestParameters(parameters: ["userid": "\(userid)","username": "\(username)"], encoding: URLEncoding.default)
+        case .addToWhiteList(let userid,let username,let domain,let password):
+            return .requestParameters(parameters: ["userid": "\(userid)","username": "\(username)","domain": "\(domain)","passwd": "\(password)"], encoding: URLEncoding.default)
         case .login(let username,let password):
             return.requestData("{\"username\": \"\(username)\",\"password\": \"\(password)\"}".data(using: String.Encoding.utf8)!)
         default:
