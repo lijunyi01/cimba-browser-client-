@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="13529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -807,49 +807,168 @@
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="GML-FA-9Dx">
+            <objects>
+                <windowController storyboardIdentifier="ModalWindowController" id="qc7-jF-2ff" sceneMemberID="viewController">
+                    <window key="window" title="ModalWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="wdM-DT-H6X">
+                        <windowStyleMask key="styleMask" titled="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="400" height="250"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                        <connections>
+                            <outlet property="delegate" destination="qc7-jF-2ff" id="yEG-gX-zSk"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="KM6-cQ-0g6" kind="relationship" relationship="window.shadowedContentViewController" id="Wuh-26-IeL"/>
+                    </connections>
+                </windowController>
+                <customObject id="TyS-5C-fg8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="1150"/>
+        </scene>
+        <!--Modal Window View Controller-->
+        <scene sceneID="Vgk-MT-YxE">
+            <objects>
+                <viewController id="KM6-cQ-0g6" customClass="ModalWindowViewController" customModule="cimba_browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="tm1-GU-v7s">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYa-Un-wLh">
+                                <rect key="frame" x="53" y="63" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="取 消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="123-Sb-gS9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancelPressed:" target="KM6-cQ-0g6" id="Jv3-p1-gaH"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kSU-X1-XsR">
+                                <rect key="frame" x="269" y="63" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="确 定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5dX-gT-YvP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xVA-bm-T7n">
+                                <rect key="frame" x="59" y="158" width="294" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="rho-8L-UON">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wBf-Eh-Frs">
+                                <rect key="frame" x="57" y="116" width="84" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="请输入密码：" id="6ZI-40-Sri">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uhw-G1-bhJ">
+                                <rect key="frame" x="189" y="116" width="155" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="X63-Tb-C0e">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="CommitButton" destination="kSU-X1-XsR" id="Jqf-FP-oSC"/>
+                        <outlet property="cancelButton" destination="eYa-Un-wLh" id="mlh-Fl-Bzx"/>
+                        <outlet property="passWord" destination="uhw-G1-bhJ" id="QN7-tq-xAM"/>
+                        <outlet property="promptTF" destination="xVA-bm-T7n" id="xmo-gK-R5S"/>
+                    </connections>
+                </viewController>
+                <customObject id="XJv-fg-i0s" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="572" y="1143"/>
+        </scene>
         <!--Web View Controller-->
         <scene sceneID="Nz6-yD-xno">
             <objects>
                 <viewController id="w2t-eE-KT4" customClass="WebViewController" customModule="cimba_browser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="CC9-WN-qvJ">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nto-q6-gfU">
-                                <rect key="frame" x="20" y="273" width="410" height="22"/>
+                                <rect key="frame" x="20" y="243" width="271" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" bezelStyle="round" id="Zcf-zn-YbJ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRU-rY-gmN">
-                                <rect key="frame" x="20" y="20" width="410" height="248"/>
+                            <wkWebView wantsLayer="YES" allowsMagnification="YES" magnification="10" translatesAutoresizingMaskIntoConstraints="NO" id="dRU-rY-gmN">
+                                <rect key="frame" x="20" y="20" width="410" height="218"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pgL-rE-08g">
+                                <rect key="frame" x="290" y="236" width="62" height="32"/>
+                                <buttonCell key="cell" type="push" title="Go!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jwC-hV-fbZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="goToUrl:" target="w2t-eE-KT4" id="L2L-7d-eCm"/>
+                                </connections>
+                            </button>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="AGw-zI-ElZ">
+                                <rect key="frame" x="273" y="246" width="16" height="16"/>
+                            </progressIndicator>
+                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yUM-lE-L0U">
+                                <rect key="frame" x="404" y="238" width="28" height="30"/>
+                                <sliderCell key="cell" alignment="left" minValue="1" maxValue="3" doubleValue="1" sliderType="circular" id="lwU-Kh-MG9"/>
+                                <connections>
+                                    <action selector="sliderAction:" target="w2t-eE-KT4" id="UAb-nr-Sm5"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Nto-q6-gfU" secondAttribute="trailing" constant="20" id="6c5-pw-RyG"/>
+                            <constraint firstItem="pgL-rE-08g" firstAttribute="leading" secondItem="AGw-zI-ElZ" secondAttribute="trailing" constant="7" id="0eO-Qi-XCI"/>
                             <constraint firstAttribute="trailing" secondItem="dRU-rY-gmN" secondAttribute="trailing" constant="20" id="9nW-Fe-NHd"/>
+                            <constraint firstItem="yUM-lE-L0U" firstAttribute="leading" secondItem="pgL-rE-08g" secondAttribute="trailing" constant="60" id="AeB-wT-L06"/>
                             <constraint firstAttribute="bottom" secondItem="dRU-rY-gmN" secondAttribute="bottom" constant="20" id="E92-g7-T4C"/>
+                            <constraint firstItem="yUM-lE-L0U" firstAttribute="top" secondItem="Nto-q6-gfU" secondAttribute="top" id="O2c-gI-OqA"/>
                             <constraint firstItem="dRU-rY-gmN" firstAttribute="top" secondItem="Nto-q6-gfU" secondAttribute="bottom" constant="5" id="Ts8-ve-fNT"/>
-                            <constraint firstItem="dRU-rY-gmN" firstAttribute="top" secondItem="Nto-q6-gfU" secondAttribute="bottom" constant="5" id="aMi-Dx-MzT"/>
+                            <constraint firstItem="dRU-rY-gmN" firstAttribute="top" secondItem="AGw-zI-ElZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Zfm-M5-rEK"/>
                             <constraint firstItem="dRU-rY-gmN" firstAttribute="leading" secondItem="CC9-WN-qvJ" secondAttribute="leading" constant="20" id="bab-XP-16M"/>
                             <constraint firstItem="Nto-q6-gfU" firstAttribute="leading" secondItem="CC9-WN-qvJ" secondAttribute="leading" constant="20" id="dYq-tR-jPz"/>
+                            <constraint firstAttribute="trailing" secondItem="yUM-lE-L0U" secondAttribute="trailing" constant="20" id="igf-uY-pEW"/>
                             <constraint firstItem="Nto-q6-gfU" firstAttribute="top" secondItem="CC9-WN-qvJ" secondAttribute="top" constant="5" id="nNm-gc-v9J"/>
+                            <constraint firstItem="dRU-rY-gmN" firstAttribute="top" secondItem="pgL-rE-08g" secondAttribute="bottom" constant="5" id="nlu-WG-Jrp"/>
+                            <constraint firstItem="pgL-rE-08g" firstAttribute="leading" secondItem="Nto-q6-gfU" secondAttribute="trailing" constant="5" id="qVG-WL-sOv"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="GoButton" destination="pgL-rE-08g" id="4aq-Uu-mzc"/>
+                        <outlet property="mySlider" destination="yUM-lE-L0U" id="AuT-tK-0BX"/>
                         <outlet property="myWebView" destination="dRU-rY-gmN" id="guO-u7-qoW"/>
+                        <outlet property="progressIndicator" destination="AGw-zI-ElZ" id="2Qu-vC-Pon"/>
                         <outlet property="urlTextField" destination="Nto-q6-gfU" id="ftE-zg-qsr"/>
                     </connections>
                 </viewController>
                 <customObject id="Cg1-jA-m82" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="659" y="655"/>
+            <point key="canvasLocation" x="963" y="738"/>
         </scene>
     </scenes>
     <resources>
