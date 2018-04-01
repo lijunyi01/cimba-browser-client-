@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A2960EA2011B30600DEDF78 /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2960E92011B30600DEDF78 /* FileDownloader.swift */; };
 		4AA28A1B1FBBDEA6007E9D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A1A1FBBDEA6007E9D59 /* AppDelegate.swift */; };
 		4AA28A1D1FBBDEA6007E9D59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A1C1FBBDEA6007E9D59 /* ViewController.swift */; };
 		4AA28A1F1FBBDEA6007E9D59 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A1E1FBBDEA6007E9D59 /* Document.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4A2960E92011B30600DEDF78 /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
 		4AA28A171FBBDEA6007E9D59 /* cimba browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cimba browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA28A1A1FBBDEA6007E9D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AA28A1C1FBBDEA6007E9D59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				4AA28A221FBBDEA6007E9D59 /* Main.storyboard */,
 				4AA28A251FBBDEA6007E9D59 /* Info.plist */,
 				4AADC28A1FECF6FA00FFF3EC /* MyPanel.xib */,
+				4A2960E92011B30600DEDF78 /* FileDownloader.swift */,
 			);
 			path = "cimba browser";
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A2960EA2011B30600DEDF78 /* FileDownloader.swift in Sources */,
 				4AA28A311FBC0184007E9D59 /* Observable+ObjectMapper.swift in Sources */,
 				4AA28A531FBC0F91007E9D59 /* WindowController.swift in Sources */,
 				4AF836211FF5524700479C84 /* WarnPanel.swift in Sources */,
