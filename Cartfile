@@ -15,5 +15,7 @@
 
 
 github "Moya/Moya" ~> 10.0
-github "Hearst-DD/ObjectMapper" ~> 2.2
+#github "Moya/Moya" ~> 11.0
+github "Hearst-DD/ObjectMapper"
+#github "Hearst-DD/ObjectMapper" ~> 3.0
 
