@@ -93,7 +93,7 @@ class WindowController: NSWindowController {
     
     var webViewController: WebViewController {
         get {
-            return self.window!.contentViewController!.childViewControllers[0] as! WebViewController
+            return self.window!.contentViewController!.children[0] as! WebViewController
         }
     }
     

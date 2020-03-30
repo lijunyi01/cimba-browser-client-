@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1A0CEF2432026B006C7E12 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A0CEE2432026A006C7E12 /* Moya.framework */; };
+		4A1A0CF02432026B006C7E12 /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A0CEE2432026A006C7E12 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A1A0CF22432027C006C7E12 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A0CF12432027C006C7E12 /* Alamofire.framework */; };
+		4A1A0CF32432027C006C7E12 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A0CF12432027C006C7E12 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A1A0CF524320290006C7E12 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A0CF424320290006C7E12 /* ReactiveSwift.framework */; };
+		4A1A0CF624320290006C7E12 /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A0CF424320290006C7E12 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A1A0CF8243203AC006C7E12 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A0CF7243203AC006C7E12 /* RxMoya.framework */; };
+		4A1A0CF9243203AC006C7E12 /* RxMoya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A0CF7243203AC006C7E12 /* RxMoya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A1A0CFB243203D2006C7E12 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A0CFA243203D2006C7E12 /* RxRelay.framework */; };
+		4A1A0CFC243203D2006C7E12 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A0CFA243203D2006C7E12 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4A2960EA2011B30600DEDF78 /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2960E92011B30600DEDF78 /* FileDownloader.swift */; };
 		4AA28A1B1FBBDEA6007E9D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A1A1FBBDEA6007E9D59 /* AppDelegate.swift */; };
 		4AA28A1D1FBBDEA6007E9D59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A1C1FBBDEA6007E9D59 /* ViewController.swift */; };
@@ -15,33 +25,25 @@
 		4AA28A241FBBDEA6007E9D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA28A221FBBDEA6007E9D59 /* Main.storyboard */; };
 		4AA28A2D1FBC0172007E9D59 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A2C1FBC0172007E9D59 /* WebViewController.swift */; };
 		4AA28A311FBC0184007E9D59 /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A301FBC0184007E9D59 /* Observable+ObjectMapper.swift */; };
-		4AA28A331FBC02BB007E9D59 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 4AA28A321FBC02BB007E9D59 /* Cartfile */; };
-		4AA28A3B1FBC0AE3007E9D59 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A341FBC0AE2007E9D59 /* RxMoya.framework */; };
-		4AA28A3C1FBC0AE3007E9D59 /* RxMoya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A341FBC0AE2007E9D59 /* RxMoya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AA28A3D1FBC0AE3007E9D59 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A351FBC0AE2007E9D59 /* Result.framework */; };
-		4AA28A3E1FBC0AE3007E9D59 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A351FBC0AE2007E9D59 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AA28A3F1FBC0AE3007E9D59 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A361FBC0AE2007E9D59 /* ObjectMapper.framework */; };
-		4AA28A401FBC0AE3007E9D59 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A361FBC0AE2007E9D59 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AA28A411FBC0AE3007E9D59 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A371FBC0AE2007E9D59 /* Moya.framework */; };
-		4AA28A421FBC0AE3007E9D59 /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A371FBC0AE2007E9D59 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AA28A431FBC0AE3007E9D59 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A381FBC0AE2007E9D59 /* RxCocoa.framework */; };
-		4AA28A441FBC0AE3007E9D59 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A381FBC0AE2007E9D59 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AA28A451FBC0AE3007E9D59 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A391FBC0AE2007E9D59 /* RxSwift.framework */; };
-		4AA28A461FBC0AE3007E9D59 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A391FBC0AE2007E9D59 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4AA28A471FBC0AE3007E9D59 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A3A1FBC0AE3007E9D59 /* Alamofire.framework */; };
-		4AA28A481FBC0AE3007E9D59 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA28A3A1FBC0AE3007E9D59 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4AA28A4D1FBC0B66007E9D59 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A4C1FBC0B65007E9D59 /* APIManager.swift */; };
 		4AA28A501FBC0BAC007E9D59 /* LoginResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A4E1FBC0BAC007E9D59 /* LoginResp.swift */; };
 		4AA28A511FBC0BAC007E9D59 /* BWInfoResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A4F1FBC0BAC007E9D59 /* BWInfoResp.swift */; };
 		4AA28A531FBC0F91007E9D59 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A521FBC0F91007E9D59 /* WindowController.swift */; };
 		4AA28A5D1FBD62D0007E9D59 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A5C1FBD62D0007E9D59 /* LoginService.swift */; };
 		4AA28A5F1FBD646A007E9D59 /* BWInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA28A5E1FBD646A007E9D59 /* BWInfoService.swift */; };
+		4AAB11DE2430B0B500A16C67 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 4AAB11DD2430B0B500A16C67 /* Cartfile */; };
 		4AADC28B1FECF6FA00FFF3EC /* MyPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AADC28A1FECF6FA00FFF3EC /* MyPanel.xib */; };
 		4AADC28D1FECF8FB00FFF3EC /* MyPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AADC28C1FECF8FB00FFF3EC /* MyPanel.swift */; };
 		4AF4F3F31FD7C8C500A4F965 /* ModalWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF4F3F21FD7C8C500A4F965 /* ModalWindowViewController.swift */; };
 		4AF8361C1FF4D43400479C84 /* AddWLPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8361B1FF4D43400479C84 /* AddWLPanel.swift */; };
 		4AF8361F1FF4E72E00479C84 /* GeneralResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8361E1FF4E72E00479C84 /* GeneralResp.swift */; };
 		4AF836211FF5524700479C84 /* WarnPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF836201FF5524700479C84 /* WarnPanel.swift */; };
+		4AF903392431D63200A02923 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF903382431D63200A02923 /* ObjectMapper.framework */; };
+		4AF9033A2431D63200A02923 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF903382431D63200A02923 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AF9033D2431F55200A02923 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF9033C2431F55200A02923 /* RxSwift.framework */; };
+		4AF9033E2431F55200A02923 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF9033C2431F55200A02923 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AF903402431F56300A02923 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF9033F2431F56300A02923 /* RxCocoa.framework */; };
+		4AF903412431F56300A02923 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF9033F2431F56300A02923 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,13 +53,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4AA28A421FBC0AE3007E9D59 /* Moya.framework in Embed Frameworks */,
-				4AA28A401FBC0AE3007E9D59 /* ObjectMapper.framework in Embed Frameworks */,
-				4AA28A461FBC0AE3007E9D59 /* RxSwift.framework in Embed Frameworks */,
-				4AA28A3C1FBC0AE3007E9D59 /* RxMoya.framework in Embed Frameworks */,
-				4AA28A481FBC0AE3007E9D59 /* Alamofire.framework in Embed Frameworks */,
-				4AA28A441FBC0AE3007E9D59 /* RxCocoa.framework in Embed Frameworks */,
-				4AA28A3E1FBC0AE3007E9D59 /* Result.framework in Embed Frameworks */,
+				4A1A0CF02432026B006C7E12 /* Moya.framework in Embed Frameworks */,
+				4AF903412431F56300A02923 /* RxCocoa.framework in Embed Frameworks */,
+				4AF9033E2431F55200A02923 /* RxSwift.framework in Embed Frameworks */,
+				4A1A0CF32432027C006C7E12 /* Alamofire.framework in Embed Frameworks */,
+				4A1A0CFC243203D2006C7E12 /* RxRelay.framework in Embed Frameworks */,
+				4AF9033A2431D63200A02923 /* ObjectMapper.framework in Embed Frameworks */,
+				4A1A0CF9243203AC006C7E12 /* RxMoya.framework in Embed Frameworks */,
+				4A1A0CF624320290006C7E12 /* ReactiveSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +68,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4A1A0CEE2432026A006C7E12 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/Mac/Moya.framework; sourceTree = "<group>"; };
+		4A1A0CF12432027C006C7E12 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
+		4A1A0CF424320290006C7E12 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/Mac/ReactiveSwift.framework; sourceTree = "<group>"; };
+		4A1A0CF7243203AC006C7E12 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/Mac/RxMoya.framework; sourceTree = "<group>"; };
+		4A1A0CFA243203D2006C7E12 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/Mac/RxRelay.framework; sourceTree = "<group>"; };
 		4A2960E92011B30600DEDF78 /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
 		4AA28A171FBBDEA6007E9D59 /* cimba browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cimba browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA28A1A1FBBDEA6007E9D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,14 +83,6 @@
 		4AA28A251FBBDEA6007E9D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AA28A2C1FBC0172007E9D59 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4AA28A301FBC0184007E9D59 /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
-		4AA28A321FBC02BB007E9D59 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		4AA28A341FBC0AE2007E9D59 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/Mac/RxMoya.framework; sourceTree = "<group>"; };
-		4AA28A351FBC0AE2007E9D59 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
-		4AA28A361FBC0AE2007E9D59 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/Mac/ObjectMapper.framework; sourceTree = "<group>"; };
-		4AA28A371FBC0AE2007E9D59 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/Mac/Moya.framework; sourceTree = "<group>"; };
-		4AA28A381FBC0AE2007E9D59 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
-		4AA28A391FBC0AE2007E9D59 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
-		4AA28A3A1FBC0AE3007E9D59 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		4AA28A4C1FBC0B65007E9D59 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		4AA28A4E1FBC0BAC007E9D59 /* LoginResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResp.swift; sourceTree = "<group>"; };
 		4AA28A4F1FBC0BAC007E9D59 /* BWInfoResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWInfoResp.swift; sourceTree = "<group>"; };
@@ -90,12 +90,16 @@
 		4AA28A5A1FBD29CF007E9D59 /* cimba browser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "cimba browser.entitlements"; sourceTree = "<group>"; };
 		4AA28A5C1FBD62D0007E9D59 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		4AA28A5E1FBD646A007E9D59 /* BWInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWInfoService.swift; sourceTree = "<group>"; };
+		4AAB11DD2430B0B500A16C67 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		4AADC28A1FECF6FA00FFF3EC /* MyPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPanel.xib; sourceTree = "<group>"; };
 		4AADC28C1FECF8FB00FFF3EC /* MyPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPanel.swift; sourceTree = "<group>"; };
 		4AF4F3F21FD7C8C500A4F965 /* ModalWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalWindowViewController.swift; sourceTree = "<group>"; };
 		4AF8361B1FF4D43400479C84 /* AddWLPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWLPanel.swift; sourceTree = "<group>"; };
 		4AF8361E1FF4E72E00479C84 /* GeneralResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResp.swift; sourceTree = "<group>"; };
 		4AF836201FF5524700479C84 /* WarnPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarnPanel.swift; sourceTree = "<group>"; };
+		4AF903382431D63200A02923 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/Mac/ObjectMapper.framework; sourceTree = "<group>"; };
+		4AF9033C2431F55200A02923 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
+		4AF9033F2431F56300A02923 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +107,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AA28A411FBC0AE3007E9D59 /* Moya.framework in Frameworks */,
-				4AA28A3F1FBC0AE3007E9D59 /* ObjectMapper.framework in Frameworks */,
-				4AA28A451FBC0AE3007E9D59 /* RxSwift.framework in Frameworks */,
-				4AA28A3B1FBC0AE3007E9D59 /* RxMoya.framework in Frameworks */,
-				4AA28A471FBC0AE3007E9D59 /* Alamofire.framework in Frameworks */,
-				4AA28A431FBC0AE3007E9D59 /* RxCocoa.framework in Frameworks */,
-				4AA28A3D1FBC0AE3007E9D59 /* Result.framework in Frameworks */,
+				4A1A0CEF2432026B006C7E12 /* Moya.framework in Frameworks */,
+				4AF903392431D63200A02923 /* ObjectMapper.framework in Frameworks */,
+				4AF9033D2431F55200A02923 /* RxSwift.framework in Frameworks */,
+				4A1A0CF22432027C006C7E12 /* Alamofire.framework in Frameworks */,
+				4A1A0CFB243203D2006C7E12 /* RxRelay.framework in Frameworks */,
+				4AF903402431F56300A02923 /* RxCocoa.framework in Frameworks */,
+				4A1A0CF8243203AC006C7E12 /* RxMoya.framework in Frameworks */,
+				4A1A0CF524320290006C7E12 /* ReactiveSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,16 +124,10 @@
 		4AA28A0E1FBBDEA6007E9D59 = {
 			isa = PBXGroup;
 			children = (
-				4AA28A3A1FBC0AE3007E9D59 /* Alamofire.framework */,
-				4AA28A371FBC0AE2007E9D59 /* Moya.framework */,
-				4AA28A361FBC0AE2007E9D59 /* ObjectMapper.framework */,
-				4AA28A351FBC0AE2007E9D59 /* Result.framework */,
-				4AA28A381FBC0AE2007E9D59 /* RxCocoa.framework */,
-				4AA28A341FBC0AE2007E9D59 /* RxMoya.framework */,
-				4AA28A391FBC0AE2007E9D59 /* RxSwift.framework */,
-				4AA28A321FBC02BB007E9D59 /* Cartfile */,
+				4AAB11DD2430B0B500A16C67 /* Cartfile */,
 				4AA28A191FBBDEA6007E9D59 /* cimba browser */,
 				4AA28A181FBBDEA6007E9D59 /* Products */,
+				4AF903372431D63200A02923 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,6 +208,21 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		4AF903372431D63200A02923 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A1A0CFA243203D2006C7E12 /* RxRelay.framework */,
+				4A1A0CF7243203AC006C7E12 /* RxMoya.framework */,
+				4A1A0CF424320290006C7E12 /* ReactiveSwift.framework */,
+				4A1A0CF12432027C006C7E12 /* Alamofire.framework */,
+				4A1A0CEE2432026A006C7E12 /* Moya.framework */,
+				4AF9033F2431F56300A02923 /* RxCocoa.framework */,
+				4AF9033C2431F55200A02923 /* RxSwift.framework */,
+				4AF903382431D63200A02923 /* ObjectMapper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,12 +234,15 @@
 				4AA28A141FBBDEA6007E9D59 /* Frameworks */,
 				4AA28A151FBBDEA6007E9D59 /* Resources */,
 				4AA28A491FBC0AE3007E9D59 /* Embed Frameworks */,
+				4AF9033B2431D6B400A02923 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "cimba browser";
+			packageProductDependencies = (
+			);
 			productName = "cimba browser";
 			productReference = 4AA28A171FBBDEA6007E9D59 /* cimba browser.app */;
 			productType = "com.apple.product-type.application";
@@ -237,7 +254,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = jason;
 				TargetAttributes = {
 					4AA28A161FBBDEA6007E9D59 = {
@@ -252,7 +269,7 @@
 				};
 			};
 			buildConfigurationList = 4AA28A121FBBDEA6007E9D59 /* Build configuration list for PBXProject "cimba browser" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -260,6 +277,8 @@
 				Base,
 			);
 			mainGroup = 4AA28A0E1FBBDEA6007E9D59;
+			packageReferences = (
+			);
 			productRefGroup = 4AA28A181FBBDEA6007E9D59 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -274,14 +293,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AA28A331FBC02BB007E9D59 /* Cartfile in Resources */,
 				4AA28A211FBBDEA6007E9D59 /* Assets.xcassets in Resources */,
 				4AADC28B1FECF6FA00FFF3EC /* MyPanel.xib in Resources */,
+				4AAB11DE2430B0B500A16C67 /* Cartfile in Resources */,
 				4AA28A241FBBDEA6007E9D59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4AF9033B2431D6B400A02923 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Moya.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4AA28A131FBBDEA6007E9D59 /* Sources */ = {
@@ -336,6 +378,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -343,6 +386,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -375,7 +419,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -393,6 +439,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -400,6 +447,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -424,7 +472,10 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_ENABLE_BATCH_MODE = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -433,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "cimba browser/cimba browser.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = PH736FYAHQ;
@@ -441,10 +493,14 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "cimba browser/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.51his.cimba-browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_ENABLE_BATCH_MODE = NO;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -453,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "cimba browser/cimba browser.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = PH736FYAHQ;
@@ -461,10 +518,14 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "cimba browser/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.51his.cimba-browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_ENABLE_BATCH_MODE = NO;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

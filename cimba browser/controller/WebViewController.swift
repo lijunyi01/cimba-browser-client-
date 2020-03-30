@@ -16,6 +16,9 @@ import RxCocoa
 
 //let kCancelCode = 0
 //let kOkCode = 1
+var webSiteDataStore_G = WKWebsiteDataStore.default()
+
+var sharedProcessPool_G = WKProcessPool()
 
 class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, NSTextFieldDelegate {
     
@@ -26,6 +29,8 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
     @IBOutlet weak var mySlider: NSSlider!
     //    var myWebView: WKWebView?
     var delegate: feedBack?
+    
+//    lazy var sharedProcessPool:WKProcessPool = WKProcessPool()
     
 //    var whiteList = Array<String>()
     
@@ -114,7 +119,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
     func webView(_ webView: WKWebView,decidePolicyFor navigationAction: WKNavigationAction,decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)){
 
         let urlString = String(describing: webView.url!)
-
+        
         if(isDropUrl(urlStr:urlString)){
 //            decisionHandler(.cancel)
             let domainToVisit = getDomain(fromUrlStr: urlString)
@@ -124,6 +129,38 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
         }else{
             decisionHandler(.allow)
         }
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        if let response = navigationResponse.response as? HTTPURLResponse, let headerField = response.allHeaderFields as? [String: String], let url = response.url {
+            
+            let responseTypeString = getResponseType(headers: headerField)
+            if(responseTypeString.contains("application") && !responseTypeString.contains("x-javascript")){
+                //下载文件的链接，调用下载方法
+                //wkwebbiew 的cookies 是单独的，不与app共享，因此下载会失败
+                
+                let downloadDomain = getDomain2(fromUrlStr: String(describing: url))
+                Swift.print("download-domain:" + downloadDomain)
+                
+                let cookieStore = webView.configuration.websiteDataStore.httpCookieStore;
+                cookieStore.getAllCookies({ (cookies) in
+                    for cookie in cookies {
+                        if(cookie.domain.elementsEqual("." + downloadDomain)){
+                            //todo: 将获取的cookie 设置到App能访问到的地方，然后App发起文件下载请求时带着这些cookies一起发送给服务端
+                            Swift.print(cookie)
+                        }
+                    }
+                    
+                    FileDownloader(url as NSObject).download(url: url)
+                    
+                })
+                
+                decisionHandler(.cancel)
+            }
+            //HTTPCookieStorage.shared.setCookies(cookies, for: response.url, mainDocumentURL: response.url)
+
+        }
+        decisionHandler(.allow)
     }
     
     
@@ -169,6 +206,40 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
 
     //新开窗口会调用到这里，打开全局变量对应的网址（可能是点击加号打开默认首页，也可能是从某网页跳转过来打开特定网址）
     override func viewDidLoad() {
+        
+        //WKWebsiteDataStore.default() 返回一个单例，这样多个Windows里的wkwebview可以共享cookie
+//        myWebView.configuration.processPool = sharedProcessPool_G
+//        myWebView.configuration.websiteDataStore = webSiteDataStore_G
+        //似乎默认就是共享的，无需特别处理，只是在新标签页打开时没有带cookie发请求（之后的请求带cookie了）
+        let urlDomain = getDomain(fromUrlStr: urlString_G)
+        let urlString_local = urlString_G
+        var cookieString = ""
+//        var cookieStrings:[String] = []
+        let cookieStore = myWebView.configuration.websiteDataStore.httpCookieStore
+        cookieStore.getAllCookies({ (cookies) in
+            for cookie in cookies {
+                Swift.print("cookie:")
+                Swift.print(cookie)
+//                if(cookie.domain.elementsEqual("." + urlDomain)){
+                if(cookie.domain.contains(urlDomain)){
+                    cookieString += "\(cookie.name)=\(cookie.value);"
+//                    cookieStrings.append("\(cookie.name)=\(cookie.value)")
+                }
+            }
+//            Swift.print("urlDomain:\(urlDomain)")
+//            Swift.print("cookieString:\(cookieString)")
+            let myURL = URL(string: urlString_local)
+            var myRequest = URLRequest(url: myURL!)
+            //cookie注入
+            Swift.print("urlDomain:\(urlDomain)")
+            Swift.print("cookieString:\(cookieString)")
+            myRequest.setValue(cookieString, forHTTPHeaderField: "cookie")
+//            cookieStrings.forEach({(element) in
+//                myRequest.addValue(element, forHTTPHeaderField: "cookie")
+//            })
+            self.myWebView.load(myRequest)
+        })
+        
         super.viewDidLoad()
         
         if(!whiteList_G.contains("bing.com")){
@@ -181,14 +252,30 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
         myWebView.navigationDelegate = self
         myWebView.uiDelegate = self
         urlTextField.delegate = self
+        
+        
+        
         // NSButton的一种效果
 //        GoButton.showsBorderOnlyWhileMouseInside = true
         
+        //清除cookies
+//        let cookieStore2 = myWebView.configuration.websiteDataStore.httpCookieStore;
+//        cookieStore2.getAllCookies({ (cookies) in
+//            for cookie in cookies {
+//                cookieStore.delete(cookie, completionHandler: nil)
+//            }
+//        })
+        
         view.addSubview(myWebView)
-        Swift.print("urlString_G:"+urlString_G)
-        let myURL = URL(string: urlString_G)
-        let myRequest = URLRequest(url: myURL!)
-        myWebView.load(myRequest)
+//        Swift.print("urlString_G:"+urlString_G)
+//        let myURL = URL(string: urlString_G)
+//        var myRequest = URLRequest(url: myURL!)
+//        //cookie注入
+//        Swift.print("urlDomain:\(urlDomain)")
+//        Swift.print("cookieString:\(cookieString)")
+//        myRequest.setValue(cookieString, forHTTPHeaderField: "cookie")
+//        myWebView.load(myRequest)
+        
 //        winTitle_G = getDomain(fromUrlStr:urlString_G)
 //        Swift.print("set title:"+winTitle_G)
         
@@ -245,6 +332,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
             //urlString = newUrl2
             let myURL = URL(string: newUrl2)
             let myRequest = URLRequest(url: myURL!)
+            
             myWebView.load(myRequest)
             
             showTitle.value = getDomain(fromUrlStr:newUrl2)
@@ -257,13 +345,15 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
         //先看用户设置的检查规则（白名单 还是 黑名单）
         let checkRule:String
         checkRule = "WHITE"
-        let domain:String
-        domain = getDomain(fromUrlStr:urlStr)
+        //从http://www.qq.com  获得 qq.com
+        //let domain = getDomain(fromUrlStr:urlStr)
+        //从http://www.qq.com  获得 www.qq.com
+        let domain2 = getDomain2(fromUrlStr:urlStr)
         if(checkRule.elementsEqual("WHITE")){
             //白名单规则过滤
             var inWhiteListFlag = false
             for whiteDomain in whiteList_G {
-                if(domain.contains(whiteDomain)){
+                if(domain2.contains(whiteDomain)){
                     inWhiteListFlag = true
                     break
                 }
@@ -277,7 +367,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
         return ret;
     }
     
-    //从url中获取domain
+    //从url中获取domain   www.qq.com 得到 qq.com
     func getDomain(fromUrlStr:String) -> String{
         var ret:String = ""
         if(fromUrlStr.starts(with: "http")){
@@ -291,6 +381,23 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
                         let startIndex = ret.index(ret.index(of: ".")!,offsetBy: 1)
                         ret = String(ret[startIndex..<ret.endIndex])
                     }
+                }else{
+                    ret = tmpString
+                }
+            }
+        }
+        return ret
+    }
+    
+    //从url中获取完整domain   www.qq.com 得到 www.qq.com
+    func getDomain2(fromUrlStr:String) -> String{
+        var ret:String = ""
+        if(fromUrlStr.starts(with: "http")){
+            let array = fromUrlStr.components(separatedBy: "://")
+            if(array.count == 2){
+                let tmpString = array[1]
+                if(tmpString.contains("/")){
+                    ret = String(tmpString[..<tmpString.index(of: "/")!])
                 }else{
                     ret = tmpString
                 }
@@ -356,8 +463,8 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
     func showModalWindow(domain:String) {
         
         // 1
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
-        let modalWindowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ModalWindowController")) as! NSWindowController
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        let modalWindowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("ModalWindowController")) as! NSWindowController
         
         if let modalWindow = modalWindowController.window {
             
@@ -379,7 +486,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
     //域名被阻挡的警告panel
     lazy var myPanel: MyPanel? = {
         var panel: MyPanel?
-        let nib  = NSNib.init(nibNamed: NSNib.Name(rawValue: "MyPanel"), bundle: Bundle.main)
+        let nib  = NSNib.init(nibNamed: NSNib.Name("MyPanel"), bundle: Bundle.main)
         if let success =  nib?.instantiate(withOwner: self, topLevelObjects: &topLevelArray) {
             if success {
                 for obj in self.topLevelArray! {
@@ -395,7 +502,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
     //添加白名单的panel
     lazy var addWLPanel: AddWLPanel? = {
         var panel: AddWLPanel?
-        let nib  = NSNib.init(nibNamed: NSNib.Name(rawValue: "MyPanel"), bundle: Bundle.main)
+        let nib  = NSNib.init(nibNamed: NSNib.Name("MyPanel"), bundle: Bundle.main)
         if let success =  nib?.instantiate(withOwner: self, topLevelObjects: &topLevelArray) {
             if success {
                 for obj in self.topLevelArray! {
@@ -412,7 +519,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
     //通用警告的panel
     lazy var warnPanel: WarnPanel? = {
         var panel: WarnPanel?
-        let nib  = NSNib.init(nibNamed: NSNib.Name(rawValue: "MyPanel"), bundle: Bundle.main)
+        let nib  = NSNib.init(nibNamed: NSNib.Name("MyPanel"), bundle: Bundle.main)
         if let success =  nib?.instantiate(withOwner: self, topLevelObjects: &topLevelArray) {
             if success {
                 for obj in self.topLevelArray! {
@@ -476,6 +583,17 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
             //重置，否则会被保留
             self.addWLPanel?.passwordTF.stringValue = ""
         })
+    }
+    
+    func getResponseType(headers:[String:String]) -> String {
+        var responseTypeString = ""
+        for header in headers {
+            if(header.key == "Content-Type") {
+               responseTypeString = header.value
+                Swift.print("typestring:" + responseTypeString)
+            }
+        }
+        return responseTypeString
     }
     
     

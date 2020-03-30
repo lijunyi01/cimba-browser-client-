@@ -51,7 +51,7 @@ enum APIManager {
 extension APIManager: TargetType, AccessTokenAuthorizable {
     
     // 实现 protocol AccessTokenAuthorizable 所需定义的闭包
-    var authorizationType: AuthorizationType {
+    var authorizationType: AuthorizationType? {
         switch self {
         case .getBWInfo:
             return .bearer
@@ -60,7 +60,7 @@ extension APIManager: TargetType, AccessTokenAuthorizable {
         case .getNewsLatest:
             return .basic
         default:
-            return .none
+            return .bearer
         }
     }
     

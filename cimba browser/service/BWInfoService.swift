@@ -29,8 +29,8 @@ class BWInfoService {
     var MyWebProvider:MoyaProvider<APIManager>?
     
     func getBWInfo(userid:Int, username: String,token: String) -> Observable<BWInfoResp> {
-        let authPlugin = AccessTokenPlugin(tokenClosure: token)
-        MyWebProvider = MoyaProvider<APIManager>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter),authPlugin])
+        let authPlugin = AccessTokenPlugin(tokenClosure: { _ -> String in token})
+        MyWebProvider = MoyaProvider<APIManager>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose)),authPlugin])
         return MyWebProvider!.rx
             .request(.getBWInfo(userid,username)).asObservable()
             .filterSuccessfulStatusCodes()
@@ -39,8 +39,8 @@ class BWInfoService {
     }
     
     func addToWhiteList(userid:Int, username: String,token: String,domain:String,password:String) -> Observable<GeneralResp> {
-        let authPlugin = AccessTokenPlugin(tokenClosure: token)
-        MyWebProvider = MoyaProvider<APIManager>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter),authPlugin])
+        let authPlugin = AccessTokenPlugin(tokenClosure: { _ -> String in token})
+        MyWebProvider = MoyaProvider<APIManager>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose)),authPlugin])
         return MyWebProvider!.rx
             .request(.addToWhiteList(userid,username,domain,password)).asObservable()
             .filterSuccessfulStatusCodes()

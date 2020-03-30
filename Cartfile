@@ -13,7 +13,9 @@
 # 使用一个私有项目，在 "development" 分支
 #git "https://enterprise.local/desktop/git-error-translations.git" "development"
 
-
-github "Moya/Moya" ~> 10.0
-github "Hearst-DD/ObjectMapper" ~> 2.2
+#github "Hearst-DD/ObjectMapper" ~> 2.2
+github "tristanhimmelman/ObjectMapper" == 3.5.2
+github "ReactiveX/RxSwift" == 5.1.1
+github "Alamofire/Alamofire" == 5.0.5
+github "Moya/Moya" == 14.0.0
 

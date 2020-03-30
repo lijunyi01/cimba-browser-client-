@@ -29,6 +29,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
+        //清理HTTPCookieStorage.shared.cookies
+//        let pastDateString = "2011-06-14 12:12:23"
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.locale = Locale(identifier: "zh_CN")
+//        dateFormatter.setLocalizedDateFormatFromTemplate("yyyyMMdd HHmmss")
+//        let pastDate = dateFormatter.date(from: pastDateString)
+//        HTTPCookieStorage.shared.removeCookies(since: pastDate!)
+//        Swift.print("cookiestorage count:" + String(describing: HTTPCookieStorage.shared.cookies?.count))
+        
+        
+        
         let loginService = LoginService()
         
         loginService.login(username: "ljy", password: "111111").subscribe(onNext: { (loginResp: LoginResp ) in
