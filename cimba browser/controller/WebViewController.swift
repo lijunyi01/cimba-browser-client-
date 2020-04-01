@@ -9,7 +9,7 @@
 import Cocoa
 import WebKit
 import RxSwift
-import RxCocoa
+import RxRelay
 
 //import Moya
 //import Alamofire
@@ -34,7 +34,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
     
 //    var whiteList = Array<String>()
     
-    var showTitle: Variable<String> = Variable("cn.bing.com")
+    var showTitle: BehaviorRelay<String> = BehaviorRelay(value:"cn.bing.com")
     
     let disposeBag = DisposeBag()
     
@@ -305,9 +305,9 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
         if (object as? WKWebView) != nil {
             if(keyPath == "title"){
                 if let webTitle = myWebView.title {
-                    self.showTitle.value = webTitle
+                    self.showTitle.accept(webTitle)
                 }else {
-                    self.showTitle.value = "untitled"
+                    self.showTitle.accept("untitled")
                 }
             }else{
                 super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
@@ -335,7 +335,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
             
             myWebView.load(myRequest)
             
-            showTitle.value = getDomain(fromUrlStr:newUrl2)
+            showTitle.accept(getDomain(fromUrlStr:newUrl2))
         }
     }  // end func
     
@@ -375,10 +375,10 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
             if(array.count == 2){
                 let tmpString = array[1]
                 if(tmpString.contains("/")){
-                    ret = String(tmpString[..<tmpString.index(of: "/")!])
+                    ret = String(tmpString[..<tmpString.firstIndex(of: "/")!])
                     let array2 = ret.components(separatedBy: ".")
                     if(array2.count>2){
-                        let startIndex = ret.index(ret.index(of: ".")!,offsetBy: 1)
+                        let startIndex = ret.index(ret.firstIndex(of: ".")!,offsetBy: 1)
                         ret = String(ret[startIndex..<ret.endIndex])
                     }
                 }else{
@@ -397,7 +397,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate, N
             if(array.count == 2){
                 let tmpString = array[1]
                 if(tmpString.contains("/")){
-                    ret = String(tmpString[..<tmpString.index(of: "/")!])
+                    ret = String(tmpString[..<tmpString.firstIndex(of: "/")!])
                 }else{
                     ret = tmpString
                 }

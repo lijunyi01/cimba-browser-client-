@@ -40,7 +40,7 @@ class WindowController: NSWindowController {
         
 //        addButtonToTitleBar()
         
-        windowCount_G.value = NSDocumentController.shared.documents.count
+        windowCount_G.accept(NSDocumentController.shared.documents.count)
         
 //        Swift.print("windowCount:" + String(windowCount_G.value))
         
@@ -52,22 +52,36 @@ class WindowController: NSWindowController {
         
         
         
-        webViewController.showTitle.asDriver()
-            .drive(onNext: { titleString in
-//                print("title:"+titleString)
-                self.window!.title = titleString
-            })
-            .disposed(by: disposeBag)
+//        webViewController.showTitle.asDriver
+//            .drive(onNext: { titleString in
+//                self.window!.title = titleString
+//            })
+//            .disposed(by: disposeBag)
         
-        windowCount_G.asDriver()
-            .drive(onNext: { count in
-                if(count > 1){
-                    self.myToolBar.isVisible = false
-                }else{
-                    self.myToolBar.isVisible = true
-                }
-            })
-            .disposed(by: disposeBag)
+        webViewController.showTitle
+             .subscribe(onNext: { titleString in
+                 self.window!.title = titleString
+             })
+             .disposed(by: disposeBag)
+        
+//        windowCount_G.asDriver()
+//            .drive(onNext: { count in
+//                if(count > 1){
+//                    self.myToolBar.isVisible = false
+//                }else{
+//                    self.myToolBar.isVisible = true
+//                }
+//            })
+//            .disposed(by: disposeBag)
+        windowCount_G
+        .subscribe(onNext: { count in
+            if(count > 1){
+                self.myToolBar.isVisible = false
+            }else{
+                self.myToolBar.isVisible = true
+            }
+        })
+        .disposed(by: disposeBag)
         
         //恢复全局变量为默认值
         urlString_G = "https://cn.bing.com"
