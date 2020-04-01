@@ -48,7 +48,7 @@ class Document: NSDocument {
     
     override func close() {
         super.close()
-        windowCount_G.value = NSDocumentController.shared.documents.count
+        windowCount_G.accept(NSDocumentController.shared.documents.count)
 //        Swift.print("windowCount:" + String(windowCount_G.value))
         
     }

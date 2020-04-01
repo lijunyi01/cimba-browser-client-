@@ -8,6 +8,7 @@
 
 import Cocoa
 import RxSwift
+import RxRelay
 
 // protocol
 protocol feedBack {
@@ -15,7 +16,7 @@ protocol feedBack {
 }
 
 var whiteList_G = Array<String>()
-var windowCount_G:Variable<Int>  = Variable(0)
+var windowCount_G:BehaviorRelay<Int>  = BehaviorRelay(value:0)
 var urlString_G: String = "https://cn.bing.com"
 //var winTitle_G: String = ""
 var userId_G: Int = 0
